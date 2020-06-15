@@ -15,8 +15,11 @@ steps:
     command: 'install'
     workingDir: '$(Build.SourcesDirectory)/NodejsWebApp1'
 - task: gulp@1
+  inputs:
+    gulpFile: '$(Build.SourcesDirectory)/NodejsWebApp1/gulpfile.js'
+    targets: 
+    workingDirectory: '$(Build.SourcesDirectory)/NodejsWebApp1'
+    enableCodeCoverage: false
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+
+
